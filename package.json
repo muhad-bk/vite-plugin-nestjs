@@ -1,0 +1,30 @@
+{
+  "name": "vite-plugin-nestjs",
+  "version": "0.0.1",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3",
+    "unbuild": "^1.0.2",
+    "vite": "^4.0.4"
+  },
+  "peerDependencies": {
+    "vite": "^4.0.0"
+  }
+}
