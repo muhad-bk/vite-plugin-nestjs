@@ -23,8 +23,8 @@ export default defineConfig({
 ## Options
 
 ```ts
-{
+type Options = {
   input: string; // Path to the NestJS entry file
   adapter: "express" | "fastify"; // The adapter you are using
-}
+};
 ```

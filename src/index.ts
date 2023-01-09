@@ -1,11 +1,16 @@
 import type { Plugin } from "vite";
 
-const PACKAGE_NAME = "vite-plugin-ssr";
+const PACKAGE_NAME = "vite-plugin-nestjs";
 
-export type Options = { input?: string; adapter?: "express" | "fastify" };
+export type Options = {
+  /** Path to the NestJS entrypoint, defaults to src/main */
+  input?: string;
+  /** The http adapter you are using, defaults to express */
+  adapter?: "express" | "fastify";
+};
 
 export default function nestjs({
-  input = "src/main",
+  input = "src/main.ts",
   adapter = "express",
 }: Options = {}): Plugin {
   return {
@@ -17,6 +22,16 @@ export default function nestjs({
           rollupOptions: {
             input,
           },
+        },
+        optimizeDeps: {
+          exclude: [
+            "cache-manager",
+            "class-transformer",
+            "class-validator",
+            "@nestjs/microservices",
+            "@nestjs/websockets",
+            "@nestjs/platform-express",
+          ],
         },
       };
     },
