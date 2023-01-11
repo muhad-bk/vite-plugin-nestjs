@@ -1,6 +1,9 @@
 {
   "name": "vite-plugin-nestjs",
   "version": "0.0.1",
+  "description": "Vite plugin for NestJS",
+  "repository": "agent-ly/vite-plugin-nestjs",
+  "license": "MIT",
   "files": [
     "dist"
   ],
