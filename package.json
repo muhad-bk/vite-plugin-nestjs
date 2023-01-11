@@ -21,9 +21,10 @@
     "dev": "unbuild --stub",
     "build": "unbuild",
     "prepack": "npm run build",
-    "release": "git push --follow-tags && npm publish"
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "devDependencies": {
+    "standard-version": "^9.5.0",
     "typescript": "^4.9.3",
     "unbuild": "^1.0.2",
     "vite": "^4.0.4"
