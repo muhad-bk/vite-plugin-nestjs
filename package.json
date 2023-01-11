@@ -20,7 +20,8 @@
   "scripts": {
     "dev": "unbuild --stub",
     "build": "unbuild",
-    "prepublishOnly": "npm run build"
+    "prepack": "npm run build",
+    "release": "git push --follow-tags && npm publish"
   },
   "devDependencies": {
     "typescript": "^4.9.3",
